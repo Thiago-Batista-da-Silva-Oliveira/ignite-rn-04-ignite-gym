@@ -5,6 +5,7 @@ import { storageUserGet, storageUserRemove, storageUserSave } from '@storage/sto
 
 import { api } from '@services/api';
 import { UserDTO } from "@dtos/UserDTO";
+import OneSignal from "react-native-onesignal";
 
 export type AuthContextDataProps = {
   user: UserDTO;
@@ -52,6 +53,7 @@ export function AuthContextProvider({ children }: AuthContextProviderProps)  {
         await storageUserAndTokenSave(data.user, data.token, data.refresh_token);
         userAndTokenUpdate(data.user, data.token)
       }
+      OneSignal.sendTag('email', email);
     } catch (error) {
       throw error
     } finally {
@@ -65,6 +67,7 @@ export function AuthContextProvider({ children }: AuthContextProviderProps)  {
       setUser({} as UserDTO);
       await storageUserRemove();
       await storageAuthTokenRemove();
+      OneSignal.deleteTag('email');
     } catch (error) {
       throw error;
     } finally {

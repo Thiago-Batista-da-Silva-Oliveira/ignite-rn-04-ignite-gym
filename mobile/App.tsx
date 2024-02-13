@@ -5,10 +5,12 @@ import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/
 import { Routes } from '@routes/index';
 
 import { AuthContextProvider } from '@contexts/AuthContext';
-
+import OneSignal from 'react-native-onesignal';
 import { THEME } from './src/theme';
 
 import { Loading } from '@components/Loading';
+
+OneSignal.setAppId("");
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
