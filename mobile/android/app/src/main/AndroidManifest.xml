@@ -27,6 +27,8 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="com.anonymous.ignitern03ignitegym"/>
+        <data android:scheme="ignite-rn-03-ignite-gym"/>
+        <data android:scheme="exp+ignite-rn-03-ignite-gym"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>

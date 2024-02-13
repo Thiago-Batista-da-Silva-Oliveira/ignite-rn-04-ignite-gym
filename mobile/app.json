@@ -2,7 +2,11 @@
   "expo": {
     "name": "ignite-rn-03-ignite-gym",
     "slug": "ignite-rn-03-ignite-gym",
+    "scheme": "ignite-rn-03-ignite-gym",
     "version": "1.0.0",
+    "fallback": {
+      "component": "./src/screens/NotFoundScreen.tsx"
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
